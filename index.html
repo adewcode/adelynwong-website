@@ -3,675 +3,715 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adelyn Wong | Property Specialist Setia Alam, Eco Park, Eco Ardence</title>
-    <meta name="description" content="12 years connecting people to real estate in Setia Alam, Setia Eco Park, Eco Ardence & Klang. Rental and sale properties available.">
+    <title>Adelyn Wong | Real Estate Matchmaker Since 2012</title>
+    <meta name="description" content="Adelyn Wong - Real Estate Matchmaker specializing in homes and business spaces in Setia Alam, Setia Eco Park, Eco Ardence & Klang. 12+ years experience.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #1e3a5f;
-            --accent-blue: #2c5282;
-            --light-blue: #4a90a4;
-            --soft-blue: #e8f4f8;
-            --white: #ffffff;
-            --cream: #fafbfc;
-            --text-dark: #1a202c;
-            --text-gray: #64748b;
-            --success: #059669;
-            --warning: #d97706;
-            --danger: #dc2626;
+            --primary-dark: #1a1a1a;
+            --primary-gold: #C9A55C;
+            --text-dark: #2d2d2d;
+            --text-light: #666666;
+            --bg-light: #fafafa;
+            --bg-white: #ffffff;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Montserrat', -apple-system, sans-serif;
+            --transition: all 0.3s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: 'Source Sans 3', sans-serif;
-            background: var(--cream);
+            font-family: var(--font-body);
             color: var(--text-dark);
             line-height: 1.6;
+            background: var(--bg-white);
         }
 
         /* Navigation */
-        .nav {
-            background: var(--primary-blue);
-            padding: 1rem 2rem;
+        .navbar {
             position: fixed;
-            width: 100%;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(30, 58, 95, 0.15);
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+            transition: var(--transition);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 70px;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
+            font-family: var(--font-display);
             font-size: 1.5rem;
-            color: var(--white);
+            font-weight: 600;
+            color: var(--primary-dark);
             text-decoration: none;
-            font-weight: 700;
+            letter-spacing: 2px;
         }
 
-        .logo span { color: var(--light-blue); }
+        .logo span {
+            color: var(--primary-gold);
+        }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
+            font-size: 0.85rem;
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            color: var(--text-dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition);
         }
 
-        .nav-links a:hover { color: var(--light-blue); }
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
 
-        /* Mobile menu */
-        .mobile-menu-btn {
+        .mobile-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
             font-size: 1.5rem;
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero Section with Banner Image */
         .hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero .tagline {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 0.5rem;
-            font-weight: 300;
-        }
-
-        .hero .areas {
-            color: var(--light-blue);
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        .hero-buttons {
+            min-height: 100vh;
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.875rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            border: none;
-            cursor: pointer;
+            justify-content: center;
+            padding: 100px 2rem 60px;
+            background: var(--bg-white);
         }
 
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-wechat {
-            background: #07C160;
-            color: white;
-        }
-
-        .btn-wechat:hover {
-            background: #06a552;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255,255,255,0.5);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: white;
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            background: var(--white);
-            padding: 2rem;
-            margin-top: -2rem;
+        .hero-banner {
+            width: 100%;
+            max-width: 1400px;
             position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(30, 58, 95, 0.1);
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Alternative: CSS-based hero that matches your banner design */
+        .hero-content {
+            display: none; /* Hidden when using banner image */
+            max-width: 1400px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-name {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 8px;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--primary-dark);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            font-size: 0.9rem;
+            font-style: italic;
+            letter-spacing: 2px;
+            color: var(--primary-gold);
+            margin-bottom: 2rem;
+        }
+
+        .hero-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .hero-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .hero-contact-item svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
+        }
+
+        .stat-item {
             text-align: center;
+            padding: 2rem;
+            background: var(--bg-white);
+            border-radius: 4px;
+            box-shadow: var(--shadow-soft);
         }
 
-        .stat-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--primary-blue);
-            margin-bottom: 0.25rem;
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
         }
 
-        .stat-item p {
-            color: var(--text-gray);
-            font-size: 0.9rem;
+        .stat-number span {
+            color: var(--primary-gold);
         }
 
-        /* Section Title */
+        .stat-label {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Listings Section */
+        .listings {
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
         .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
         }
 
-        .section-title h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.25rem;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-light);
         }
 
-        .section-title p { color: var(--text-gray); }
-
-        /* Filter Bar */
-        .filter-bar {
-            background: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
+        /* Filter Tabs */
+        .filter-tabs {
             display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
         }
 
-        .filter-btn {
-            padding: 0.5rem 1.25rem;
-            border: 2px solid var(--soft-blue);
-            background: var(--white);
-            border-radius: 50px;
+        .filter-tab {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 30px;
+            background: var(--bg-white);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
             cursor: pointer;
-            font-weight: 500;
-            color: var(--text-gray);
-            transition: all 0.3s;
-            font-size: 0.9rem;
+            transition: var(--transition);
         }
 
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary-blue);
-            border-color: var(--primary-blue);
-            color: white;
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: var(--primary-dark);
+            color: var(--bg-white);
+            border-color: var(--primary-dark);
         }
 
-        /* Listings Grid */
-        .listings-section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
+        /* Property Grid */
+        .property-grid {
+            max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .listings-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 2rem;
         }
 
-        /* Property Card */
         .property-card {
-            background: var(--white);
-            border-radius: 16px;
+            background: var(--bg-white);
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(30, 58, 95, 0.08);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
         }
 
         .property-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(30, 58, 95, 0.15);
+            box-shadow: var(--shadow-hover);
         }
-
-        .property-card.hidden { display: none; }
 
         .property-image {
             position: relative;
             height: 220px;
-            background: linear-gradient(135deg, var(--soft-blue) 0%, #d1e3ea 100%);
+            background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
 
-        .property-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .property-image .icon {
+            font-size: 4rem;
+            opacity: 0.5;
         }
 
-        .property-image .placeholder {
-            color: var(--light-blue);
-            font-size: 3rem;
-        }
-
-        /* Photo Carousel */
-        .carousel {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 0.3s ease;
-            height: 100%;
-        }
-
-        .carousel-images img {
-            min-width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.9);
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: var(--primary-blue);
-            transition: all 0.3s;
-            z-index: 10;
-        }
-
-        .carousel-btn:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        .carousel-btn.prev { left: 10px; }
-        .carousel-btn.next { right: 10px; }
-
-        .carousel-dots {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 6px;
-        }
-
-        .carousel-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .carousel-dot.active {
-            background: white;
-            transform: scale(1.2);
-        }
-
-        .status-badge {
+        .property-badges {
             position: absolute;
             top: 1rem;
             left: 1rem;
-            padding: 0.35rem 0.875rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            z-index: 5;
-        }
-
-        .status-available { background: var(--success); color: white; }
-        .status-rented { background: var(--danger); color: white; }
-        .status-sold { background: var(--text-dark); color: white; }
-
-        .type-badge {
-            position: absolute;
-            top: 1rem;
             right: 1rem;
-            padding: 0.35rem 0.75rem;
-            background: rgba(30, 58, 95, 0.9);
-            color: white;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            z-index: 5;
+            display: flex;
+            justify-content: space-between;
         }
 
-        .property-details { padding: 1.5rem; }
+        .badge {
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .badge-status {
+            background: #22c55e;
+            color: white;
+        }
+
+        .badge-status.let-out {
+            background: #94a3b8;
+        }
+
+        .badge-type {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        .badge-type.for-sale {
+            background: var(--primary-gold);
+            color: white;
+        }
+
+        .property-content {
+            padding: 1.5rem;
+        }
 
         .property-location {
-            color: var(--light-blue);
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: var(--primary-gold);
             margin-bottom: 0.5rem;
         }
 
-        .property-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            color: var(--text-dark);
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-            line-height: 1.3;
+        .property-type {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
         }
 
         .property-specs {
             display: flex;
-            gap: 1rem;
+            gap: 1.25rem;
             margin-bottom: 1rem;
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--text-light);
         }
 
-        .property-specs span {
+        .property-spec {
             display: flex;
             align-items: center;
             gap: 0.35rem;
         }
 
         .property-price {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 1.25rem;
         }
 
-        .property-price small {
+        .property-price span {
+            font-family: var(--font-body);
             font-size: 0.85rem;
             font-weight: 400;
-            color: var(--text-gray);
+            color: var(--text-light);
         }
 
+        /* Property Action Buttons */
         .property-actions {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
-        .btn-card-whatsapp {
+        .btn-enquire {
             flex: 1;
-            padding: 0.75rem;
-            background: #25D366;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            transition: all 0.3s;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .btn-card-whatsapp:hover { background: #128C7E; }
-
-        .btn-card-wechat {
-            padding: 0.75rem 1rem;
-            background: #07C160;
+            padding: 0.85rem 1.25rem;
+            background: #25D366;
             color: white;
             border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
+            border-radius: 6px;
+            font-family: var(--font-body);
             font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
         }
 
-        .btn-card-wechat:hover { background: #06a552; }
-
-        .closed-badge {
-            flex: 1;
-            text-align: center;
-            padding: 0.75rem;
-            background: #f1f5f9;
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--text-gray);
+        .btn-enquire:hover {
+            background: #1da851;
         }
 
-        /* Social Proof Section */
-        .social-proof {
-            background: var(--primary-blue);
-            padding: 4rem 2rem;
-            text-align: center;
-            color: white;
-        }
-
-        .social-proof h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-proof p {
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .recently-closed {
+        .btn-share {
             display: flex;
-            gap: 1rem;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            max-width: 1000px;
+            padding: 0.85rem 1rem;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-share:hover {
+            background: var(--primary-dark);
+            color: white;
+            border-color: var(--primary-dark);
+        }
+
+        .btn-share svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .let-out-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem;
+            background: #f1f5f9;
+            color: #64748b;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        /* Recently Closed Section */
+        .recently-closed {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .closed-grid {
+            max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
         }
 
         .closed-item {
-            background: rgba(255,255,255,0.1);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            min-width: 200px;
-        }
-
-        .closed-item strong {
-            display: block;
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .closed-item span {
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-white);
+            border-radius: 4px;
             font-size: 0.85rem;
-            opacity: 0.8;
+            color: var(--text-light);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .closed-item::before {
+            content: '✓';
+            color: #22c55e;
+            margin-right: 0.5rem;
         }
 
         /* Contact Section */
-        .contact-section {
-            padding: 4rem 2rem;
-            background: var(--white);
+        .contact {
+            padding: 5rem 2rem;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
 
         .contact-buttons {
             display: flex;
-            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            gap: 1rem;
             margin-top: 2rem;
         }
 
         .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 1rem 2rem;
-            border-radius: 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
             text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
 
-        .contact-btn.whatsapp { background: #25D366; color: white; }
-        .contact-btn.whatsapp:hover { background: #128C7E; transform: translateY(-2px); }
-
-        .contact-btn.wechat { background: #07C160; color: white; }
-        .contact-btn.wechat:hover { background: #06a552; transform: translateY(-2px); }
-
-        .contact-btn.email { background: var(--primary-blue); color: white; }
-        .contact-btn.email:hover { background: var(--accent-blue); transform: translateY(-2px); }
-
-        .social-links {
-            margin-top: 2rem;
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .social-links a {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--soft-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-blue);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary-blue);
+        .contact-btn.whatsapp {
+            background: #25D366;
             color: white;
-            transform: translateY(-2px);
+        }
+
+        .contact-btn.whatsapp:hover {
+            background: #1da851;
+        }
+
+        .contact-btn.wechat {
+            background: #07C160;
+            color: white;
+        }
+
+        .contact-btn.email {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        .contact-btn.email:hover {
+            background: #333;
+        }
+
+        /* Referral Box */
+        .referral-box {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #fef9e7 0%, #fdf6e3 100%);
+            border: 1px solid var(--primary-gold);
+            border-radius: 8px;
+        }
+
+        .referral-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .referral-text {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .referral-highlight {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary-gold);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
         /* Footer */
         .footer {
-            background: var(--text-dark);
-            color: white;
-            padding: 3rem 2rem 1.5rem;
+            background: var(--primary-dark);
+            color: #e0e0e0;
+            padding: 4rem 2rem 2rem;
         }
 
-        .footer-content {
+        .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             gap: 3rem;
-            margin-bottom: 2rem;
         }
 
-        .footer h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+        .footer-brand .logo {
+            color: white;
             margin-bottom: 1rem;
+            display: inline-block;
         }
 
-        .footer h4 {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer p {
-            opacity: 0.8;
+        .footer-brand p {
+            font-size: 0.9rem;
             line-height: 1.8;
+            opacity: 0.8;
+        }
+
+        .footer-title {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: white;
         }
 
         .footer-links {
             list-style: none;
         }
 
-        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
 
         .footer-links a {
-            color: rgba(255,255,255,0.8);
+            color: #e0e0e0;
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: var(--transition);
         }
 
-        .footer-links a:hover { color: var(--light-blue); }
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-gold);
+        }
 
         .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.5rem;
             text-align: center;
+            font-size: 0.85rem;
             opacity: 0.6;
-            font-size: 0.9rem;
         }
 
-        /* Floating WhatsApp Button */
-        .floating-whatsapp {
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+            display: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: var(--shadow-soft);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 90px 1rem 40px;
+            }
+
+            .hero-name {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
@@ -683,1334 +723,220 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.3s;
-            text-decoration: none;
+            z-index: 999;
+            transition: var(--transition);
         }
 
-        .floating-whatsapp:hover {
+        .whatsapp-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
         }
 
-        .floating-whatsapp svg {
-            width: 30px;
-            height: 30px;
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
             fill: white;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block; }
-            .hero h1 { font-size: 2rem; }
-            .hero { padding: 7rem 1.5rem 3rem; }
-            .stats-bar {
-                grid-template-columns: repeat(2, 1fr);
-                margin: -1rem 1rem 0;
-                padding: 1.5rem;
-                gap: 1rem;
-            }
-            .stat-item h3 { font-size: 1.5rem; }
-            .listings-section { padding: 2rem 1rem; }
-            .listings-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .filter-bar { padding: 1rem; gap: 0.5rem; }
-            .filter-btn { padding: 0.4rem 0.9rem; font-size: 0.8rem; }
-            .footer-content { grid-template-columns: 1fr; }
-            .contact-buttons { flex-direction: column; align-items: center; }
-            .contact-btn { width: 100%; max-width: 300px; justify-content: center; }
-        }
-
-        /* No results message */
-        .no-results {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-gray);
-            display: none;
-        }
-
-        .no-results.show { display: block; }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Adelyn<span>Wong</span></a>
-            <ul class="nav-links">
+            <a href="#" class="logo">ADELYN<span>WONG</span></a>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#listings">Listings</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="document.getElementById('listings').scrollIntoView({behavior:'smooth'})">☰</button>
+            <button class="mobile-toggle" onclick="toggleNav()">☰</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Banner -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Adelyn Wong</h1>
-            <p class="tagline">12 Years Connecting People to Real Estate</p>
-            <p class="areas">Setia Alam • Setia Eco Park • Eco Ardence • Klang</p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/60176846282" class="btn btn-whatsapp" target="_blank">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    WhatsApp
-                </a>
-                <a href="#contact" class="btn btn-wechat">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.269-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.969-.982z"/></svg>
-                    WeChat
-                </a>
-                <a href="#listings" class="btn btn-outline">View Listings</a>
+        <div class="hero-banner">
+            <img src="hero-banner.png" alt="Adelyn Wong - Real Estate Matchmaker Since 2012 - Homes & Business Spaces">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">12<span>+</span></div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">160<span>+</span></div>
+                <div class="stat-label">Properties Managed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">36</div>
+                <div class="stat-label">Active Listings</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">26</div>
+                <div class="stat-label">Recently Closed</div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Bar -->
-    <div class="stats-bar">
-        <div class="stat-item">
-            <h3>12+</h3>
-            <p>Years Experience</p>
-        </div>
-        <div class="stat-item">
-            <h3>160+</h3>
-            <p>Properties Managed</p>
-        </div>
-        <div class="stat-item">
-            <h3>36</h3>
-            <p>Active Listings</p>
-        </div>
-        <div class="stat-item">
-            <h3>26</h3>
-            <p>Recently Closed</p>
-        </div>
-    </div>
-
     <!-- Listings Section -->
-    <section class="listings-section" id="listings">
-        <div class="section-title">
-            <h2>Available Properties</h2>
-            <p>Find your perfect home in Setia Alam, Eco Park & Eco Ardence</p>
+    <section class="listings" id="listings">
+        <div class="section-header">
+            <h2 class="section-title">Available Properties</h2>
+            <p class="section-subtitle">Find your perfect home in Setia Alam, Eco Park & Eco Ardence</p>
         </div>
 
-        <!-- Filter Bar -->
-        <div class="filter-bar">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="rent">For Rent</button>
-            <button class="filter-btn" data-filter="sale">For Sale</button>
-            <button class="filter-btn" data-filter="setia-eco-park">Setia Eco Park</button>
-            <button class="filter-btn" data-filter="eco-ardence">Eco Ardence</button>
-            <button class="filter-btn" data-filter="setia-city">Setia City</button>
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="rent">For Rent</button>
+            <button class="filter-tab" data-filter="sale">For Sale</button>
+            <button class="filter-tab" data-filter="setia-eco-park">Setia Eco Park</button>
+            <button class="filter-tab" data-filter="eco-ardence">Eco Ardence</button>
+            <button class="filter-tab" data-filter="setia-city">Setia City</button>
         </div>
 
-        <!-- Listings Grid -->
-        <div class="listings-grid">
-
-            <!-- PROP-00015 -->
-            <div class="property-card" data-type="rent" data-location="setia-alam" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Yale Suites @ EduSentral</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 1 Beds</span>
-                        <span>🚿 1 Baths</span>
-                        <span>📐 502 sqft</span>
-                    </div>
-                    <p class="property-price">RM 1,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Yale%20Suites%20@%20EduSentral%20(RM%201%2C500/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00050 -->
+        <div class="property-grid" id="propertyGrid">
+            <!-- Property cards will be populated here -->
+            <!-- Example card structure: -->
             <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
                 <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 1,221 sqft</span>
+                    <span class="icon">🏢</span>
+                    <div class="property-badges">
+                        <span class="badge badge-status">Available</span>
+                        <span class="badge badge-type">For Rent</span>
                     </div>
-                    <p class="property-price">RM 4,300 <small>/month</small></p>
+                </div>
+                <div class="property-content">
+                    <div class="property-location">Yale Suites @ EduSentral</div>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span class="property-spec">🛏️ 1 Bed</span>
+                        <span class="property-spec">🚿 1 Bath</span>
+                        <span class="property-spec">📐 502 sqft</span>
+                    </div>
+                    <div class="property-price">RM 1,500 <span>/month</span></div>
                     <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%204%2C300/month)" class="btn-card-whatsapp" target="_blank">
+                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20at%20Yale%20Suites%20%40%20EduSentral%20(RM%201%2C500%2Fmonth)" class="btn-enquire">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                             Enquire
                         </a>
+                        <button class="btn-share" onclick="shareProperty('Apartment at Yale Suites @ EduSentral', 'RM 1,500/month', 'rent')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- PROP-00067 -->
             <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
                 <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 1,221 sqft</span>
+                    <span class="icon">🏢</span>
+                    <div class="property-badges">
+                        <span class="badge badge-status">Available</span>
+                        <span class="badge badge-type">For Rent</span>
                     </div>
-                    <p class="property-price">RM 5,300 <small>/month</small></p>
+                </div>
+                <div class="property-content">
+                    <div class="property-location">Setia City Residences</div>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span class="property-spec">🛏️ 3 Beds</span>
+                        <span class="property-spec">🚿 2 Baths</span>
+                        <span class="property-spec">📐 1,221 sqft</span>
+                    </div>
+                    <div class="property-price">RM 4,300 <span>/month</span></div>
                     <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%205%2C300/month)" class="btn-card-whatsapp" target="_blank">
+                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20at%20Setia%20City%20Residences%20(RM%204%2C300%2Fmonth)" class="btn-enquire">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                             Enquire
                         </a>
+                        <button class="btn-share" onclick="shareProperty('Apartment at Setia City Residences', 'RM 4,300/month', 'rent')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- PROP-00022 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
+            <div class="property-card" data-type="sale" data-location="setia-eco-park" data-status="available">
                 <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 985 sqft</span>
+                    <span class="icon">🏠</span>
+                    <div class="property-badges">
+                        <span class="badge badge-status">Available</span>
+                        <span class="badge badge-type for-sale">For Sale</span>
                     </div>
-                    <p class="property-price">RM 2,500 <small>/month</small></p>
+                </div>
+                <div class="property-content">
+                    <div class="property-location">Setia Eco Park</div>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span class="property-spec">🛏️ 5 Beds</span>
+                        <span class="property-spec">🚿 6 Baths</span>
+                        <span class="property-spec">📐 3,500 sqft</span>
+                    </div>
+                    <div class="property-price">RM 1,980,000</div>
                     <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%202%2C500/month)" class="btn-card-whatsapp" target="_blank">
+                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-D%20at%20Setia%20Eco%20Park%20(RM%201%2C980%2C000)" class="btn-enquire">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                             Enquire
                         </a>
+                        <button class="btn-share" onclick="shareProperty('Semi-D at Setia Eco Park', 'RM 1,980,000', 'sale')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- PROP-00118 -->
-            <div class="property-card" data-type="sale" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Sale</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 5 Beds</span>
-                        <span>🚿 6 Baths</span>
-                        <span>📐 3,500 sqft</span>
-                    </div>
-                    <p class="property-price">RM 1,980,000</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-Detached%20House%20at%20SETIA%20ECO%20PARK%20(RM%201%2C980%2C000)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00107 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 985 sqft</span>
-                    </div>
-                    <p class="property-price">RM 3,400 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%203%2C400/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00106 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 1,221 sqft</span>
-                    </div>
-                    <p class="property-price">RM 3,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%203%2C500/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00115 -->
-            <div class="property-card" data-type="rent" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 4 Beds</span>
-                        <span>🚿 5 Baths</span>
-                        <span>📐 3,095 sqft</span>
-                    </div>
-                    <p class="property-price">RM 5,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-Detached%20House%20at%20SETIA%20ECO%20PARK%20(RM%205%2C500/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00108 -->
-            <div class="property-card" data-type="sale" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏡</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Sale</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Bungalow / Villa</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 6 Beds</span>
-                        <span>🚿 6 Baths</span>
-                        <span>📐 4,200 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,590,000</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Bungalow%20/%20Villa%20at%20SETIA%20ECO%20PARK%20(RM%202%2C590%2C000)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00109 -->
-            <div class="property-card" data-type="sale" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏡</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Sale</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Bungalow / Villa</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 4 Baths</span>
-                        <span>📐 2,417 sqft</span>
-                    </div>
-                    <p class="property-price">RM 3,500,000</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Bungalow%20/%20Villa%20at%20SETIA%20ECO%20PARK%20(RM%203%2C500%2C000)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00003 -->
-            <div class="property-card" data-type="rent" data-location="eco-ardence" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏘️</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">ECO ARDENCE</p>
-                    <h3 class="property-title">TOWNHOUSE</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 1,154 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,950 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20TOWNHOUSE%20at%20ECO%20ARDENCE%20(RM%202%2C950/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00002 -->
-            <div class="property-card" data-type="sale" data-location="eco-ardence" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Sale</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">ECO ARDENCE</p>
-                    <h3 class="property-title">2 STOREY SEMI-D</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 5 Beds</span>
-                        <span>🚿 4 Baths</span>
-                        <span>📐 2,200 sqft</span>
-                    </div>
-                    <p class="property-price">RM 1,750,000</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%202%20STOREY%20SEMI-D%20at%20ECO%20ARDENCE%20(RM%201%2C750%2C000)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00114 -->
-            <div class="property-card" data-type="rent" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏡</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Bungalow / Villa</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 4 Beds</span>
-                        <span>🚿 5 Baths</span>
-                        <span>📐 4,500 sqft</span>
-                    </div>
-                    <p class="property-price">RM 6,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Bungalow%20/%20Villa%20at%20SETIA%20ECO%20PARK%20(RM%206%2C500/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00010 -->
-            <div class="property-card" data-type="sale" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏡</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Sale</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Bungalow / Villa</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 5 Beds</span>
-                        <span>🚿 6 Baths</span>
-                        <span>📐 3,900 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,700,000</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Bungalow%20/%20Villa%20at%20SETIA%20ECO%20PARK%20(RM%202%2C700%2C000)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00008 -->
-            <div class="property-card" data-type="rent" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 3 Baths</span>
-                        <span>📐 2,400 sqft</span>
-                    </div>
-                    <p class="property-price">RM 4,950 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-Detached%20House%20at%20SETIA%20ECO%20PARK%20(RM%204%2C950/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00122 -->
-            <div class="property-card" data-type="rent" data-location="eco-ardence" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">ECO ARDENCE</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 5 Beds</span>
-                        <span>🚿 4 Baths</span>
-                        <span>📐 2,390 sqft</span>
-                    </div>
-                    <p class="property-price">RM 5,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-Detached%20House%20at%20ECO%20ARDENCE%20(RM%205%2C500/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00090 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 985 sqft</span>
-                    </div>
-                    <p class="property-price">RM 3,000 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%203%2C000/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00001 -->
-            <div class="property-card" data-type="rent" data-location="other" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">TAMAN AMAN PERDANA</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 4 Beds</span>
-                        <span>🚿 3 Baths</span>
-                        <span>📐 2,000 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,000 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-Detached%20House%20at%20TAMAN%20AMAN%20PERDANA%20(RM%202%2C000/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00100 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">TREFOIL@SETIA CITY</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ Studio</span>
-                        <span>🚿 1 Baths</span>
-                        <span>📐 486 sqft</span>
-                    </div>
-                    <p class="property-price">Contact for Price</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20TREFOIL@SETIA%20CITY" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00101 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ Studio</span>
-                        <span>🚿 1 Baths</span>
-                        <span>📐 258 sqft</span>
-                    </div>
-                    <p class="property-price">RM 1,200 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%201%2C200/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00104 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">TREFOIL@SETIA CITY</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ Studio</span>
-                        <span>🚿 1 Baths</span>
-                        <span>📐 485 sqft</span>
-                    </div>
-                    <p class="property-price">Contact for Price</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20TREFOIL@SETIA%20CITY" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00105 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">TREFOIL@SETIA CITY</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ Studio</span>
-                        <span>🚿 1 Baths</span>
-                        <span>📐 486 sqft</span>
-                    </div>
-                    <p class="property-price">Contact for Price</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20TREFOIL@SETIA%20CITY" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00116 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 985 sqft</span>
-                    </div>
-                    <p class="property-price">RM 3,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%203%2C500/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00007 -->
-            <div class="property-card" data-type="rent" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏡</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Bungalow / Villa</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 6 Beds</span>
-                        <span>🚿 7 Baths</span>
-                        <span>📐 6,800 sqft</span>
-                    </div>
-                    <p class="property-price">RM 14,000 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Bungalow%20/%20Villa%20at%20SETIA%20ECO%20PARK%20(RM%2014%2C000/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00006 -->
-            <div class="property-card" data-type="rent" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 4 Beds</span>
-                        <span>🚿 5 Baths</span>
-                        <span>📐 3,500 sqft</span>
-                    </div>
-                    <p class="property-price">RM 6,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-Detached%20House%20at%20SETIA%20ECO%20PARK%20(RM%206%2C500/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00134 -->
-            <div class="property-card" data-type="rent" data-location="eco-ardence" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">ECO ARDENCE</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 5 Beds</span>
-                        <span>🚿 4 Baths</span>
-                        <span>📐 2,790 sqft</span>
-                    </div>
-                    <p class="property-price">RM 6,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-Detached%20House%20at%20ECO%20ARDENCE%20(RM%206%2C500/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00135 -->
-            <div class="property-card" data-type="rent" data-location="eco-ardence" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">ECO ARDENCE</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 5 Beds</span>
-                        <span>🚿 4 Baths</span>
-                        <span>📐 2,790 sqft</span>
-                    </div>
-                    <p class="property-price">RM 6,000 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-Detached%20House%20at%20ECO%20ARDENCE%20(RM%206%2C000/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00136 -->
-            <div class="property-card" data-type="rent" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏡</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Bungalow / Villa</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 5 Beds</span>
-                        <span>🚿 7 Baths</span>
-                        <span>📐 3,686 sqft</span>
-                    </div>
-                    <p class="property-price">RM 6,800 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Bungalow%20/%20Villa%20at%20SETIA%20ECO%20PARK%20(RM%206%2C800/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00137 -->
-            <div class="property-card" data-type="sale" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Sale</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 4 Beds</span>
-                        <span>🚿 5 Baths</span>
-                        <span>📐 3,498 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,500,000</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Semi-Detached%20House%20at%20SETIA%20ECO%20PARK%20(RM%202%2C500%2C000)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00142 -->
-            <div class="property-card" data-type="sale" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Sale</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 985 sqft</span>
-                    </div>
-                    <p class="property-price">RM 530,000</p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%20530%2C000)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00003 -->
-            <div class="property-card" data-type="rent" data-location="eco-ardence" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏘️</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">ECO ARDENCE</p>
-                    <h3 class="property-title">TOWNHOUSE</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 1,154 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,950 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20TOWNHOUSE%20at%20ECO%20ARDENCE%20(RM%202%2C950/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00141 -->
-            <div class="property-card" data-type="rent" data-location="other" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Regency Suites @ Bangsar Trade Centre</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 1 Beds</span>
-                        <span>🚿 1 Baths</span>
-                        <span>📐 646 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,400 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Regency%20Suites%20@%20Bangsar%20Trade%20Centre%20(RM%202%2C400/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00005 -->
-            <div class="property-card" data-type="rent" data-location="eco-park" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏡</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Bungalow / Villa</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 4 Beds</span>
-                        <span>🚿 5 Baths</span>
-                        <span>📐 3,100 sqft</span>
-                    </div>
-                    <p class="property-price">RM 6,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Bungalow%20/%20Villa%20at%20SETIA%20ECO%20PARK%20(RM%206%2C500/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00077 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 1,221 sqft</span>
-                    </div>
-                    <p class="property-price">RM 4,300 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Setia%20City%20Residences%20(RM%204%2C300/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00150 -->
-            <div class="property-card" data-type="rent" data-location="eco-ardence" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Huni @ Eco Ardence</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 1,000 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,200 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Apartment%20/%20Condo%20/%20Service%20Residence%20at%20Huni%20@%20Eco%20Ardence%20(RM%202%2C200/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00149 -->
-            <div class="property-card" data-type="rent" data-location="other" data-status="available">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-available">Available</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia Indah</p>
-                    <h3 class="property-title">Terrace / Link House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 4 Beds</span>
-                        <span>🚿 3 Baths</span>
-                        <span>📐 1,442 sqft</span>
-                    </div>
-                    <p class="property-price">RM 1,800 <small>/month</small></p>
-                    <div class="property-actions">
-                        <a href="https://wa.me/60176846282?text=Hi%20Adelyn%2C%20I'm%20interested%20in%20the%20Terrace%20/%20Link%20House%20at%20Setia%20Indah%20(RM%201%2C800/month)" class="btn-card-whatsapp" target="_blank">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Enquire
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00125 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 858 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,000 <small>/month</small></p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00085 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 985 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,900 <small>/month</small></p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00113 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">TREFOIL@SETIA CITY</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 791 sqft</span>
-                    </div>
-                    <p class="property-price">RM 1,800 <small>/month</small></p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00128 -->
-            <div class="property-card" data-type="rent" data-location="eco-park" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏠</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">SETIA ECO PARK</p>
-                    <h3 class="property-title">Semi-Detached House</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 4 Beds</span>
-                        <span>🚿 6 Baths</span>
-                        <span>📐 4,500 sqft</span>
-                    </div>
-                    <p class="property-price">RM 7,500 <small>/month</small></p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00130 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 858 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,800 <small>/month</small></p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00021 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 985 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,200 <small>/month</small></p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00025 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 858 sqft</span>
-                    </div>
-                    <p class="property-price">Contact for Price</p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00030 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 985 sqft</span>
-                    </div>
-                    <p class="property-price">RM 3,800 <small>/month</small></p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00083 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 3 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 1,221 sqft</span>
-                    </div>
-                    <p class="property-price">Contact for Price</p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROP-00097 -->
-            <div class="property-card" data-type="rent" data-location="setia-city" data-status="closed">
-                <div class="property-image">
-                    <span class="placeholder">🏢</span>
-                    <span class="status-badge status-rented">Let Out</span>
-                    <span class="type-badge">For Rent</span>
-                </div>
-                <div class="property-details">
-                    <p class="property-location">Setia City Residences</p>
-                    <h3 class="property-title">Apartment / Condo / Service Residence</h3>
-                    <div class="property-specs">
-                        <span>🛏️ 2 Beds</span>
-                        <span>🚿 2 Baths</span>
-                        <span>📐 985 sqft</span>
-                    </div>
-                    <p class="property-price">RM 2,800 <small>/month</small></p>
-                    <div class="property-actions">
-                        <span class="closed-badge">✓ Let Out</span>
-                    </div>
-                </div>
-            </div>
+            <!-- More property cards would go here... -->
         </div>
 
-        <div class="no-results">
+        <div class="no-results" id="noResults">
             <h3>No properties found</h3>
             <p>Try selecting a different filter</p>
         </div>
     </section>
 
-    <!-- Social Proof Section -->
-    <section class="social-proof">
-        <h2>Recently Closed Deals</h2>
-        <p>Properties successfully rented and sold</p>
-        <div class="recently-closed">
-            <div class="closed-item">
-                <strong>🔴 Let Out</strong>
-                <span>Setia City Residences</span>
-            </div>
-            <div class="closed-item">
-                <strong>🔴 Let Out</strong>
-                <span>Setia City Residences</span>
-            </div>
-            <div class="closed-item">
-                <strong>🔴 Let Out</strong>
-                <span>TREFOIL@SETIA CITY</span>
-            </div>
-            <div class="closed-item">
-                <strong>🔴 Let Out</strong>
-                <span>SETIA ECO PARK</span>
-            </div>
-            <div class="closed-item">
-                <strong>🔴 Let Out</strong>
-                <span>Setia City Residences</span>
-            </div>
-            <div class="closed-item">
-                <strong>🔴 Let Out</strong>
-                <span>Setia City Residences</span>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="section-title">
-            <h2>Get In Touch</h2>
-            <p>Ready to find your perfect property? Contact me today!</p>
-        </div>
-        <div class="contact-buttons">
-            <a href="https://wa.me/60176846282" class="contact-btn whatsapp" target="_blank">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                WhatsApp Me
-            </a>
-            <a href="#" class="contact-btn wechat" onclick="alert('WeChat ID: adelynwong80'); return false;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.269-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.982.969-.982z"/></svg>
-                WeChat: adelynwong80
-            </a>
-            <a href="mailto:adelynwonglive@gmail.com" class="contact-btn email">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                Email Me
-            </a>
-        </div>
-        <div class="social-links">
-            <a href="https://www.facebook.com/adelynwongkl/" target="_blank" title="Facebook">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/adelynwong80" target="_blank" title="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="https://share.google/fi0TxOmYQC3PXgYE3" target="_blank" title="Google Reviews (45 Reviews ⭐5.0)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
-            </a>
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to find your perfect property? Contact me today!</p>
+            </div>
+
+            <div class="contact-buttons">
+                <a href="https://wa.me/60176846282" class="contact-btn whatsapp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp Me
+                </a>
+                <a href="#" class="contact-btn wechat">
+                    WeChat: adelynwong80
+                </a>
+                <a href="mailto:adelynwonglive@gmail.com" class="contact-btn email">
+                    Email Me
+                </a>
+            </div>
+
+            <!-- Referral Program Box -->
+            <div class="referral-box">
+                <h3 class="referral-title">🎁 Refer & Earn Program</h3>
+                <p class="referral-text">Know someone looking for a property? Refer them to me! When they successfully rent or buy through me, you'll receive a referral reward as a thank you.</p>
+                <span class="referral-highlight">Just mention who referred you when enquiring!</span>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <h3>Adelyn Wong</h3>
-                <p>
-                    Real Estate Negotiator with CID Realtors (REN03144)<br>
-                    12 years connecting people to real estate in<br>
-                    Setia Alam, Setia Eco Park, Eco Ardence & Klang.
-                </p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">ADELYN<span>WONG</span></a>
+                <p>Real Estate Negotiator with CID Realtors (REN03144)<br>
+                12 years connecting people to real estate in<br>
+                Setia Alam, Setia Eco Park, Eco Ardence & Klang.</p>
             </div>
             <div>
-                <h4>Quick Links</h4>
+                <h4 class="footer-title">Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#listings">Listings</a></li>
@@ -2018,7 +944,7 @@
                 </ul>
             </div>
             <div>
-                <h4>Contact</h4>
+                <h4 class="footer-title">Connect</h4>
                 <ul class="footer-links">
                     <li><a href="https://wa.me/60176846282">WhatsApp</a></li>
                     <li><a href="https://www.facebook.com/adelynwongkl/">Facebook</a></li>
@@ -2029,67 +955,94 @@
             </div>
         </div>
         <div class="footer-bottom">
-            © 2026 Adelyn Wong. All rights reserved. | Generated on 16 Jan 2026, 02:33 PM
+            © 2026 Adelyn Wong. All rights reserved.
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/60176846282" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/60176846282" class="whatsapp-float">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
-    <!-- Filter Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const propertyCards = document.querySelectorAll('.property-card');
-            const noResults = document.querySelector('.no-results');
+        // Mobile Navigation Toggle
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Update active button
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const filter = this.dataset.filter;
-                    let visibleCount = 0;
-
-                    propertyCards.forEach(card => {
-                        const type = card.dataset.type;
-                        const location = card.dataset.location;
-                        const status = card.dataset.status;
-
-                        let show = false;
-
-                        if (filter === 'all') {
-                            show = true;
-                        } else if (filter === 'rent' && type === 'rent') {
-                            show = true;
-                        } else if (filter === 'sale' && type === 'sale') {
-                            show = true;
-                        } else if (filter === 'setia-eco-park' && location.includes('eco-park')) {
-                            show = true;
-                        } else if (filter === 'eco-ardence' && location.includes('eco-ardence')) {
-                            show = true;
-                        } else if (filter === 'setia-city' && location.includes('setia-city')) {
-                            show = true;
-                        }
-
-                        if (show) {
-                            card.classList.remove('hidden');
-                            visibleCount++;
-                        } else {
-                            card.classList.add('hidden');
-                        }
-                    });
-
-                    // Show/hide no results message
-                    if (visibleCount === 0) {
-                        noResults.classList.add('show');
-                    } else {
-                        noResults.classList.remove('show');
-                    }
+        // Share Property Function
+        function shareProperty(propertyName, price, type) {
+            const typeText = type === 'rent' ? 'for rent' : 'for sale';
+            const message = `Check out this property ${typeText}! ${propertyName} - ${price} 🏠\n\nView more at: ${window.location.href}`;
+            
+            // Try native share first (mobile)
+            if (navigator.share) {
+                navigator.share({
+                    title: propertyName,
+                    text: message,
+                    url: window.location.href
+                }).catch(() => {
+                    // Fallback to WhatsApp
+                    shareViaWhatsApp(message);
                 });
+            } else {
+                // Desktop: share via WhatsApp
+                shareViaWhatsApp(message);
+            }
+        }
+
+        function shareViaWhatsApp(message) {
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Filter Functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const propertyCards = document.querySelectorAll('.property-card');
+        const noResults = document.getElementById('noResults');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const filter = tab.dataset.filter;
+                let visibleCount = 0;
+
+                propertyCards.forEach(card => {
+                    const type = card.dataset.type;
+                    const location = card.dataset.location;
+
+                    let show = false;
+                    if (filter === 'all') {
+                        show = true;
+                    } else if (filter === 'rent' && type === 'rent') {
+                        show = true;
+                    } else if (filter === 'sale' && type === 'sale') {
+                        show = true;
+                    } else if (filter === location) {
+                        show = true;
+                    }
+
+                    card.style.display = show ? 'block' : 'none';
+                    if (show) visibleCount++;
+                });
+
+                noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile nav if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
             });
         });
     </script>
