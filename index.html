@@ -52,7 +52,12 @@
         }
     
 
-        .stats { padding: 3rem 2rem; background: var(--bg-white); margin-top: 70px; }
+        /* Hero Banner */
+        .hero { margin-top: 70px; background: var(--bg-cream); position: relative; overflow: hidden; }
+        .hero-banner { width: 100%; display: block; }
+        .hero-banner img { width: 100%; height: auto; display: block; }
+
+        .stats { padding: 3rem 2rem; background: var(--bg-white); }
         .stats-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
         .stat-item { text-align: center; padding: 1.5rem; background: var(--bg-light); border-radius: 8px; border-left: 3px solid var(--primary-gold); }
         .stat-number { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--primary-dark); }
@@ -124,6 +129,13 @@
             <button class="mobile-toggle">☰</button>
         </div>
     </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+        <div class="hero-banner">
+            <img src="hero-banner.png" alt="Adelyn Wong Real Estate" onerror="this.style.display='none'">
+        </div>
+    </section>
 
     <section class="stats">
         <div class="stats-container">
