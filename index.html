@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adelyn Wong | Real Estate Matchmaker Since 2012</title>
+    <meta name="description" content="Adelyn Wong - Real Estate Matchmaker specializing in Setia Alam, Setia Eco Park, Eco Ardence & Klang. 12+ years experience.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --primary-dark: #1a1a1a;
+            --primary-gold: #C9A55C;
+            --text-dark: #2d2d2d;
+            --text-light: #666666;
+            --bg-light: #fafafa;
+            --bg-cream: #fdf8f3;
+            --bg-white: #ffffff;
+            --green-whatsapp: #25D366;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Montserrat', -apple-system, sans-serif;
+            --transition: all 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.6; background: var(--bg-white); }
+
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(0,0,0,0.05); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--primary-dark); text-decoration: none; letter-spacing: 2px; }
+        .logo span { color: var(--primary-gold); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-dark); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: var(--transition); }
+        .nav-links a:hover { color: var(--primary-gold); }
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+        .footer { background: var(--primary-dark); color: rgba(255,255,255,0.7); padding: 3rem 2rem; text-align: center; }
+        .footer-logo { font-family: var(--font-display); font-size: 1.5rem; color: white; margin-bottom: 1rem; }
+        .footer-logo span { color: var(--primary-gold); }
+        .footer-text { font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .footer-ren { font-size: 0.75rem; color: var(--primary-gold); }
+
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: var(--green-whatsapp); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition); text-decoration: none; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+        }
+    
+
+        .stats { padding: 3rem 2rem; background: var(--bg-white); margin-top: 70px; }
+        .stats-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .stat-item { text-align: center; padding: 1.5rem; background: var(--bg-light); border-radius: 8px; border-left: 3px solid var(--primary-gold); }
+        .stat-number { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--primary-dark); }
+        .stat-number span { color: var(--primary-gold); }
+        .stat-label { font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); margin-top: 0.25rem; }
+
+        .listings { padding: 4rem 2rem; background: var(--bg-white); }
+        .section-header { text-align: center; margin-bottom: 2.5rem; }
+        .section-title { font-family: var(--font-display); font-size: 2.2rem; font-weight: 400; color: var(--primary-dark); margin-bottom: 0.5rem; }
+        .section-subtitle { font-size: 0.9rem; color: var(--text-light); }
+
+        .filter-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+        .filter-tab { padding: 0.6rem 1.2rem; border: 1px solid #e0e0e0; border-radius: 25px; background: var(--bg-white); font-family: var(--font-body); font-size: 0.8rem; cursor: pointer; transition: var(--transition); }
+        .filter-tab:hover, .filter-tab.active { background: var(--primary-dark); color: var(--bg-white); border-color: var(--primary-dark); }
+
+        .property-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+        .property-card { background: var(--bg-white); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); transition: var(--transition); cursor: pointer; text-decoration: none; color: inherit; display: block; }
+        .property-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+        
+        .property-image { position: relative; height: 200px; background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%); overflow: hidden; }
+        .carousel { position: relative; width: 100%; height: 100%; }
+        .carousel-inner { display: flex; transition: transform 0.3s ease; height: 100%; }
+        .carousel-item { min-width: 100%; height: 100%; }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; z-index: 10; transition: var(--transition); }
+        .carousel-btn:hover { background: var(--primary-gold); color: white; }
+        .carousel-btn.prev { left: 8px; }
+        .carousel-btn.next { right: 8px; }
+        .carousel-dots { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; }
+        .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; }
+        .carousel-dot.active { background: white; }
+        .photo-count { position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.6); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; }
+        
+        .property-image .icon { font-size: 3.5rem; opacity: 0.5; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        
+        .property-badges { position: absolute; top: 0.75rem; left: 0.75rem; display: flex; gap: 0.5rem; z-index: 5; }
+        .badge { padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+        .badge-status { background: #22c55e; color: white; }
+        .badge-status.let-out { background: #94a3b8; }
+        .badge-type { background: var(--primary-dark); color: white; }
+        .badge-type.for-sale { background: var(--primary-gold); color: white; }
+        
+        .property-content { padding: 1.25rem; }
+        .property-location { font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; color: var(--primary-gold); margin-bottom: 0.4rem; }
+        .property-type { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--primary-dark); margin-bottom: 0.75rem; }
+        .property-specs { display: flex; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 0.8rem; color: var(--text-light); }
+        .property-price { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--primary-dark); margin-bottom: 1rem; }
+
+        .property-actions { display: flex; gap: 0.5rem; }
+        .btn-view { flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.75rem; background: var(--primary-dark); color: white; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 500; text-decoration: none; transition: var(--transition); }
+        .btn-view:hover { background: var(--primary-gold); }
+        .btn-closed { flex: 1; display: flex; align-items: center; justify-content: center; padding: 0.75rem; background: #94a3b8; color: white; border: none; border-radius: 6px; font-size: 0.8rem; font-weight: 500; }
+
+        @media (max-width: 768px) {
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .property-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ADELYN<span>WONG</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#listings">Listings</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle">☰</button>
+        </div>
+    </nav>
+
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">12<span>+</span></div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">163<span>+</span></div>
+                <div class="stat-label">Properties Managed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">37</div>
+                <div class="stat-label">Active Listings</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">26<span>+</span></div>
+                <div class="stat-label">Deals Closed</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="listings" id="listings">
+        <div class="section-header">
+            <h2 class="section-title">Property Listings</h2>
+            <p class="section-subtitle">Find your perfect home in Setia Alam, Eco Park & Eco Ardence</p>
+        </div>
+        
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="rent">For Rent</button>
+            <button class="filter-tab" data-filter="sale">For Sale</button>
+            <button class="filter-tab" data-filter="setia-eco-park">Setia Eco Park</button>
+            <button class="filter-tab" data-filter="eco-ardence">Eco Ardence</button>
+            <button class="filter-tab" data-filter="setia-city">Setia City</button>
+        </div>
+        
+        <div class="property-grid">
+
+            <a href="PROP-00015.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-01.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-02.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-03.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-04.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-05.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-06.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-07.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-08.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-09.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00015/serviced-residence-edu-sentral-for-rent-adelynwong-10.jpg" alt="Yale Suites @ EduSentral" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Yale Suites @ EduSentral</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 1 Beds</span>
+                        <span>🚿 1 Baths</span>
+                        <span>📐 502 sqft</span>
+                    </div>
+                    <p class="property-price">RM 1,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00050.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015026_4368fecc_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015026_4368fecc_2_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015026_9b3b9dea_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015026_9b3b9dea_2_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015027_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015027_2_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015028_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015028_2_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015028_3_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00050/condo-setia-city-residences-for-rent-adelynwong-R0015028_4_result.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 1,221 sqft</span>
+                    </div>
+                    <p class="property-price">RM 4,300/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00067.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00067/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 1,221 sqft</span>
+                    </div>
+                    <p class="property-price">RM 5,300/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00022.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00022/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 985 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00118.html" class="property-card" data-type="sale" data-location="setia-eco-park">
+                <div class="property-image">
+                    <span class="icon">🏡</span>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type for-sale">For Sale</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 5 Beds</span>
+                        <span>🚿 6 Baths</span>
+                        <span>📐 3,500 sqft</span>
+                    </div>
+                    <p class="property-price">RM 1.98M</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00107.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015561_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015561_2_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015561_3_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015562_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015563_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015563_2_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015564_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015564_2_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015564_3_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00107/condo-setia-alam-for-rent-adelynwong-R0015565_1_result.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 985 sqft</span>
+                    </div>
+                    <p class="property-price">RM 3,400/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00106.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00106/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 1,221 sqft</span>
+                    </div>
+                    <p class="property-price">RM 3,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00115.html" class="property-card" data-type="rent" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-01.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-02.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-03.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-04.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-05.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-06.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-07.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-08.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-09.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00115/semid-setia-eco-park-for-sale-adelynwong-10.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 4 Beds</span>
+                        <span>🚿 5 Baths</span>
+                        <span>📐 3,095 sqft</span>
+                    </div>
+                    <p class="property-price">RM 5,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00108.html" class="property-card" data-type="sale" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016653_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016653_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016653_3_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016654_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016654_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016654_3_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016654_4_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016654_5_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016655_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00108/bungalow-setia-eco-park-for-sale-adelynwong-R0016655_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type for-sale">For Sale</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Bungalow / Villa</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 6 Beds</span>
+                        <span>🚿 6 Baths</span>
+                        <span>📐 4,200 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2.59M</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00109.html" class="property-card" data-type="sale" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-01.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-02.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-03.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-04.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-05.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-06.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-07.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-08.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-09.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00109/bungalow-setia-eco-park-for-sale-adelynwong-10.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type for-sale">For Sale</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Bungalow / Villa</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 4 Baths</span>
+                        <span>📐 2,417 sqft</span>
+                    </div>
+                    <p class="property-price">RM 3.50M</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00003.html" class="property-card" data-type="rent" data-location="eco-ardence">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-300_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-300_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-300_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-300_4_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-301_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-301_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-302_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-302_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-302_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-531_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">ECO ARDENCE</p>
+                    <h3 class="property-type">TOWNHOUSE</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 1,154 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,950/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00002.html" class="property-card" data-type="sale" data-location="eco-ardence">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-303_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-303_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-304_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-304_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-304_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-304_4_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-304_5_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-305_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-305_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00002/semid-eco-ardence-ember-adelyn-wong-305_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type for-sale">For Sale</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">ECO ARDENCE</p>
+                    <h3 class="property-type">2 STOREY SEMI-D</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 5 Beds</span>
+                        <span>🚿 4 Baths</span>
+                        <span>📐 2,200 sqft</span>
+                    </div>
+                    <p class="property-price">RM 1.75M</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00114.html" class="property-card" data-type="rent" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-01.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-02.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-03.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-04.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-05.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-06.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-07.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-08.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-09.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00114/terrace-setia-eco-park-for-sale-adelynwong-10.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Bungalow / Villa</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 4 Beds</span>
+                        <span>🚿 5 Baths</span>
+                        <span>📐 4,500 sqft</span>
+                    </div>
+                    <p class="property-price">RM 6,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00010.html" class="property-card" data-type="sale" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-01.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-02.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-03.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-04.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-05.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-06.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-07.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-08.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-09.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00010/corner-bungalow-setia-eco-park-for-sale-adelynwong-10.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type for-sale">For Sale</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Bungalow / Villa</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 5 Beds</span>
+                        <span>🚿 6 Baths</span>
+                        <span>📐 3,900 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2.70M</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00008.html" class="property-card" data-type="rent" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-01.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-02.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-03.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-04.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-05.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-06.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-07.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-08.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-09.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00008/bungalow-setia-eco-park-for-rent-adelynwong-10.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 3 Baths</span>
+                        <span>📐 2,400 sqft</span>
+                    </div>
+                    <p class="property-price">RM 4,950/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00122.html" class="property-card" data-type="rent" data-location="eco-ardence">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-391_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-391_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-391_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-392_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-392_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-393_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-393_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-393_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-394_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00122/semid-eco-ardence-ember-adelyn-wong-395_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">ECO ARDENCE</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 5 Beds</span>
+                        <span>🚿 4 Baths</span>
+                        <span>📐 2,390 sqft</span>
+                    </div>
+                    <p class="property-price">RM 5,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00090.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00090/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 985 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,800/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00001.html" class="property-card" data-type="rent" data-location="other">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-01.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-02.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-03.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-04.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-05.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-06.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-07.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-08.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-09.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00001/semid-aman-perdana-klang-for-rent-adelynwong-10.jpg" alt="TAMAN AMAN PERDANA" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">TAMAN AMAN PERDANA</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 4 Beds</span>
+                        <span>🚿 3 Baths</span>
+                        <span>📐 2,000 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,000/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00100.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    <span class="icon">🏢</span>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">TREFOIL@SETIA CITY</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ Studio</span>
+                        <span>🚿 1 Baths</span>
+                        <span>📐 486 sqft</span>
+                    </div>
+                    <p class="property-price">RM 900/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00101.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00101/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ Studio</span>
+                        <span>🚿 1 Baths</span>
+                        <span>📐 258 sqft</span>
+                    </div>
+                    <p class="property-price">RM 1,200/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00104.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00104/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-01.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00104/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-02.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00104/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-03.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00104/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-04.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00104/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-05.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">5 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">TREFOIL@SETIA CITY</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ Studio</span>
+                        <span>🚿 1 Baths</span>
+                        <span>📐 485 sqft</span>
+                    </div>
+                    <p class="property-price">RM 1,200/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00105.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-01.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-02.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-03.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-04.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-05.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-06.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-07.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-08.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-09.png" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00105/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-10.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">TREFOIL@SETIA CITY</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ Studio</span>
+                        <span>🚿 1 Baths</span>
+                        <span>📐 486 sqft</span>
+                    </div>
+                    <p class="property-price">RM 1,400/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00116.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00116/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 985 sqft</span>
+                    </div>
+                    <p class="property-price">RM 3,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00007.html" class="property-card" data-type="rent" data-location="setia-eco-park">
+                <div class="property-image">
+                    <span class="icon">🏡</span>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Bungalow / Villa</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 6 Beds</span>
+                        <span>🚿 7 Baths</span>
+                        <span>📐 6,800 sqft</span>
+                    </div>
+                    <p class="property-price">RM 14,000/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00006.html" class="property-card" data-type="rent" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016038_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016038_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016038_3_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016039_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016039_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016039_3_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016040_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016040_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016041_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00006/semid-nusantara-setia-eco-park-for-rent-adelynwong-R0016042_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 4 Beds</span>
+                        <span>🚿 5 Baths</span>
+                        <span>📐 3,500 sqft</span>
+                    </div>
+                    <p class="property-price">RM 6,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00134.html" class="property-card" data-type="rent" data-location="eco-ardence">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-604_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-605_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-605_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-606_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-606_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-607_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-607_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-608_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-608_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00134/semid-eco-ardence-ember-adelyn-wong-608_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">ECO ARDENCE</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 5 Beds</span>
+                        <span>🚿 4 Baths</span>
+                        <span>📐 2,790 sqft</span>
+                    </div>
+                    <p class="property-price">RM 6,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00135.html" class="property-card" data-type="rent" data-location="eco-ardence">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-598_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-598_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-598_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-599_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-600_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-600_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-600_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-600_4_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-600_5_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00135/semid-eco-ardence-ember-adelyn-wong-600_6_result.jpg" alt="ECO ARDENCE" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">ECO ARDENCE</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 5 Beds</span>
+                        <span>🚿 4 Baths</span>
+                        <span>📐 2,790 sqft</span>
+                    </div>
+                    <p class="property-price">RM 6,000/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00136.html" class="property-card" data-type="rent" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-537_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-537_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-537_3_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-537_4_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-538_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-538_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-539_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-540_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-541_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00136/bungalow-setia-eco-park-tropika-adelyn-wong-541_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Bungalow / Villa</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 5 Beds</span>
+                        <span>🚿 7 Baths</span>
+                        <span>📐 3,686 sqft</span>
+                    </div>
+                    <p class="property-price">RM 6,800/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00137.html" class="property-card" data-type="sale" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-555_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-555_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-555_3_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-555_4_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-555_5_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-556_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-556_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-557_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-557_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00137/semid-setia-eco-park-duta-adelyn-wong-558_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type for-sale">For Sale</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 4 Beds</span>
+                        <span>🚿 5 Baths</span>
+                        <span>📐 3,498 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2.50M</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00142.html" class="property-card" data-type="sale" data-location="setia-city">
+                <div class="property-image">
+                    <span class="icon">🏢</span>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type for-sale">For Sale</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 985 sqft</span>
+                    </div>
+                    <p class="property-price">RM 530,000</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00003.html" class="property-card" data-type="rent" data-location="eco-ardence">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-300_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-300_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-300_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-300_4_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-301_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-301_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-302_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-302_2_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-302_3_result.jpg" alt="ECO ARDENCE" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00003/co-home-eco-ardence-ember-adelyn-wong-531_1_result.jpg" alt="ECO ARDENCE" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">ECO ARDENCE</p>
+                    <h3 class="property-type">TOWNHOUSE</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 1,154 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,950/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00141.html" class="property-card" data-type="rent" data-location="other">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11459_1_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11459_2_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11462_1_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11462_2_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11462_3_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11462_4_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11462_5_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11463_1_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11463_2_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00141/bangsar-trade-centre-adelyn-wong-11463_3_result.jpg" alt="Regency Suites @ Bangsar Trade Centre" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Regency Suites @ Bangsar Trade Centre</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 1 Beds</span>
+                        <span>🚿 1 Baths</span>
+                        <span>📐 646 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,400/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00005.html" class="property-card" data-type="rent" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-FloorPlan_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-bathroom-3015009_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-car-porch014991_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-dry-kitchen-014995_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-living-hall-014993_2_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-stairs-015004_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-walk-in-wardrobe-014999 (1)_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-walk-in-wardrobe-015008 (1)_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-walk-in-wardrobe-015008_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00005/bungalow-setia-eco-park-wet-kitchen-014996_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Bungalow / Villa</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 4 Beds</span>
+                        <span>🚿 5 Baths</span>
+                        <span>📐 3,100 sqft</span>
+                    </div>
+                    <p class="property-price">RM 6,500/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00077.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015965_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015965_2_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015965_3_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015965_4_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015966_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015967_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015968_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015968_2_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015969_1_result.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00077/setia-alam-condo-for-rent-adelynwong-R0015969_2_result.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 1,221 sqft</span>
+                    </div>
+                    <p class="property-price">RM 4,300/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00150.html" class="property-card" data-type="rent" data-location="eco-ardence">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00150/apartment-huni-residence-eco-ardence-for-rent-adelynwong-01.jpg" alt="Huni @ Eco Ardence" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00150/apartment-huni-residence-eco-ardence-for-rent-adelynwong-02.jpg" alt="Huni @ Eco Ardence" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00150/apartment-huni-residence-eco-ardence-for-rent-adelynwong-03.jpg" alt="Huni @ Eco Ardence" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00150/apartment-huni-residence-eco-ardence-for-rent-adelynwong-04.jpg" alt="Huni @ Eco Ardence" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00150/apartment-huni-residence-eco-ardence-for-rent-adelynwong-05.jpg" alt="Huni @ Eco Ardence" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00150/apartment-huni-residence-eco-ardence-for-rent-adelynwong-06.jpg" alt="Huni @ Eco Ardence" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00150/apartment-huni-residence-eco-ardence-for-rent-adelynwong-07.jpg" alt="Huni @ Eco Ardence" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">7 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Huni @ Eco Ardence</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 1,000 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,200/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00149.html" class="property-card" data-type="rent" data-location="other">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014817_1_result.jpg" alt="Setia Indah" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014817_2_result.jpg" alt="Setia Indah" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014817_3_result.jpg" alt="Setia Indah" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014818_1_result.jpg" alt="Setia Indah" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014819_1_result.jpg" alt="Setia Indah" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014819_2_result.jpg" alt="Setia Indah" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014820_1_result.jpg" alt="Setia Indah" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014820_2_result.jpg" alt="Setia Indah" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014820_3_result.jpg" alt="Setia Indah" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00149/2-storey-terrace-house-for-rent-setia-alam-adelynwong-R0014820_4_result.jpg" alt="Setia Indah" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia Indah</p>
+                    <h3 class="property-type">Terrace / Link House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 4 Beds</span>
+                        <span>🚿 3 Baths</span>
+                        <span>📐 1,442 sqft</span>
+                    </div>
+                    <p class="property-price">RM 1,800/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="PROP-00126.html" class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00126/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status">AVAILABLE</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 1,045 sqft</span>
+                    </div>
+                    <p class="property-price">RM 3,200/month</p>
+                    <div class="property-actions">
+                        <span class="btn-view">View Details →</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00125/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 858 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,000/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-01.png" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00085/serviced-residence-setia-city-residences-for-sale-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 985 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,900/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-01.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-02.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-03.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-04.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-05.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-06.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-07.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-08.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-09.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00113/serviced-residence-trefoil-setia-alam-for-rent-adelynwong-10.jpg" alt="TREFOIL@SETIA CITY" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">TREFOIL@SETIA CITY</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 791 sqft</span>
+                    </div>
+                    <p class="property-price">RM 1,800/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card" data-type="rent" data-location="setia-eco-park">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16337_3_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16340_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16343_4_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16344_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16345_4_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16349_5_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16350_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16354_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16358_3_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00128/semid-setia-eco-park-16368_1_result.jpg" alt="SETIA ECO PARK" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">SETIA ECO PARK</p>
+                    <h3 class="property-type">Semi-Detached House</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 4 Beds</span>
+                        <span>🚿 6 Baths</span>
+                        <span>📐 4,500 sqft</span>
+                    </div>
+                    <p class="property-price">RM 7,500/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00130/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00130/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00130/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00130/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00130/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00130/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00130/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">7 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 858 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,800/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00021/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 985 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,200/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00025/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 858 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,700/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00030/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 985 sqft</span>
+                    </div>
+                    <p class="property-price">RM 3,800/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00083/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 3 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 1,221 sqft</span>
+                    </div>
+                    <p class="property-price">RM 3,500/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-card" data-type="rent" data-location="setia-city">
+                <div class="property-image">
+                    
+                <div class="carousel">
+                    <div class="carousel-inner"><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-01.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-02.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-03.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-04.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-05.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-06.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-07.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-08.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-09.jpg" alt="Setia City Residences" loading="lazy"></div><div class="carousel-item"><img src="photos/PROP-00097/serviced-residence-setia-city-residences-for-rent-adelynwong-10.jpg" alt="Setia City Residences" loading="lazy"></div></div>
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                    <div class="carousel-dots"><span class="carousel-dot active"></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span><span class="carousel-dot "></span></div>
+                    <span class="photo-count">10 photos</span>
+                </div>
+                    <div class="property-badges">
+                        <span class="badge badge-status let-out">LET OUT</span>
+                        <span class="badge badge-type ">For Rent</span>
+                    </div>
+                </div>
+                <div class="property-content">
+                    <p class="property-location">Setia City Residences</p>
+                    <h3 class="property-type">Apartment / Condo / Service Residence</h3>
+                    <div class="property-specs">
+                        <span>🛏️ 2 Beds</span>
+                        <span>🚿 2 Baths</span>
+                        <span>📐 985 sqft</span>
+                    </div>
+                    <p class="property-price">RM 2,500/month</p>
+                    <div class="property-actions">
+                        <button class="btn-closed" disabled>✓ Let Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact" style="padding: 4rem 2rem; background: var(--bg-cream);">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to find your dream home? Contact me today!</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem;">
+                <a href="https://wa.me/60176846282" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; border-radius: 50px; font-weight: 500; text-decoration: none; background: var(--green-whatsapp); color: white;" target="_blank">WhatsApp</a>
+                <a href="weixin://dl/chat?adelynwong80" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; border-radius: 50px; font-weight: 500; text-decoration: none; background: #07c160; color: white;">WeChat: adelynwong80</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">ADELYN<span>WONG</span></div>
+        <p class="footer-text">Connecting People to Real Estate Since 2012</p>
+        <p class="footer-ren">REN 03144 | CID Realtors</p>
+        <p class="footer-text" style="margin-top: 1rem; font-size: 0.75rem;">Updated: 20 Jan 2026</p>
+    </footer>
+
+    <a href="https://wa.me/60176846282" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const filter = tab.dataset.filter;
+                document.querySelectorAll('.property-card').forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const matches = card.dataset.type === filter || card.dataset.location === filter;
+                        card.style.display = matches ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const inner = carousel.querySelector('.carousel-inner');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            const prevBtn = carousel.querySelector('.carousel-btn.prev');
+            const nextBtn = carousel.querySelector('.carousel-btn.next');
+            let current = 0;
+            const total = items.length;
+
+            function goTo(index) {
+                if (index < 0) index = total - 1;
+                if (index >= total) index = 0;
+                current = index;
+                inner.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); goTo(current - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); goTo(current + 1); });
+            dots.forEach((dot, i) => dot.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); goTo(i); }));
+        });
+    </script>
+</body>
+</html>
