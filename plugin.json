@@ -1,0 +1,13 @@
+{
+  "name": "Website Generator (v4)",
+  "icon": "🌐",
+  "tab": "distribution",
+  "description": "Generate individual property HTML pages (PROP-00001.html etc.) for adelynwong.com. Legacy version.",
+  "version": "4.0",
+  "entry": "generate_website_v4.py",
+  "config": null,
+  "masterbook_sheets": ["Properties", "Active Listing"],
+  "actions": [
+    { "id": "generate", "label": "Generate Pages", "command": "python generate_website_v4.py", "icon": "🔧" }
+  ]
+}
